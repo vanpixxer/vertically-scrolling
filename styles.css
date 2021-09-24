@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: #fffcdd;
+    background: #805841;
     color: hsl(209, 61%, 16%);
     line-height: 1.5;
     font-size: 0.875rem;
@@ -187,4 +187,41 @@ header {
     .container p {
         max-width: 40rem;
     }
+}
+
+
+/*
+========================
+Sections and Section Titles
+========================
+*/
+
+.title h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+.title span {
+    color: hsl(182, 63%, 54%);
+}
+
+#about,
+#services,
+#tours {
+    height: 85vh;
+}
+
+#services {
+    background: #fffcdd;
+}
+
+footer {
+    background: #341931;
+    padding: 5rem 1rem;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    margin-bottom: 0;
 }
