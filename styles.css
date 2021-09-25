@@ -124,11 +124,11 @@ fixed-nav .links a {
     transition: all 0.3s linear;
     cursor: pointer;
 }
-/*
-nav-toggle:hover {
+
+.nav-toggle:hover {
     color: hsla(182, 63%, 54%);
 }
-*/
+
 
 .logo {
     height: 60px;
@@ -139,9 +139,12 @@ nav-toggle:hover {
     overflow: hidden;
     transition: all 0.3s linear;
 }
+.show-links {
+    height: 200px;
+}
 .links a {
     background: #fff;
-    color: hsl(210, 22, 49);
+    color: rgb(2, 22, 22);
     font-size: 1.2rem;
     text-transform: capitalize;
     letter-spacing: 0.25rem;
@@ -151,7 +154,7 @@ nav-toggle:hover {
     padding: 0.75rem 0;
 }
 .links a:hover {
-    color: hsl(209, 61%, 16%);
+    color: hsla(182, 63%, 54%);
 }
 
 /* 
@@ -224,4 +227,25 @@ footer p {
     text-transform: capitalize;
     letter-spacing: 0.25rem;
     margin-bottom: 0;
+}
+
+.top-link {
+    font-size: 1.25rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background: hsla(182, 63%, 54%);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    color: #fff;
+    animation: bounce 2s ease-in-out infinite;
+    visibility: hidden;
+    z-index: -100;
+}
+.scroll-link {
+    visibility: visible;
+    z-index: 100;
 }
