@@ -45,4 +45,43 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// hide the 'scroll-to-top'  button until we scroll down past 500px
+if (scrollHeight > 500) {
+    toplink.classList.add("show-link");
+} else {
+    toplink.classList.remove("show-link");
+}
+
 // *****************************Smooth Scroll ****************************
+const scrollLinks = document.querySelectorAll(".scroll-link");
+
+scrollLinks.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+        // prevent default scrolling
+        e.preventDefault();
+        // navigate to specific spot - currentTarget is the link we clicked on
+        // slice is used to remove the hash tag from section id
+        const id = e.currentTarget.getAttribute('href').slice(1);
+        const element = document.getElementById(id);
+        // calculate heights
+        const navHeight = navbar.getBoundingClientRect().height;
+        const containerHeight = linksContainer.getBoundingClientRect().height;
+        const fixedNav = navbar.classList.contains("fixed-nav");
+        // get position of element in pixels
+        let position = element.offsetTop - navHeight;
+
+        if ( !fixedNav) {
+            position = position - navHeight;
+        }
+
+        if (navHeight > 82) {
+            position = position + containerHeight;
+        }
+
+        window.scrollTo( {
+            left:0,
+            top: position,
+        });
+         linksContainer.style.height = 0;
+    });
+});
