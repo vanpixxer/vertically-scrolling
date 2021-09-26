@@ -31,6 +31,18 @@ navToggle.addEventListener('click', function() {
     }
 });
 
+
+const navbar = document.getElementById('nav');
+const toplink = document.querySelector('.top-link');
 // ***************************Fixed Navbar *************************
+window.addEventListener('scroll', function() {
+    const scrollHeight = window.pageYOffset;
+    const navHeight = navbar.getBoundingClientRect().height;
+    if (scrollHeight > navHeight) {
+        navbar.classList.add('fixed-nav');
+    } else {
+        navbar.classList.remove('fixed-nav');
+    }
+});
 
 // *****************************Smooth Scroll ****************************
